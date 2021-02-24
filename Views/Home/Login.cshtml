@@ -1,0 +1,25 @@
+@model UserLog
+
+
+<h1>
+    Login to your Account!!!!!!!
+</h1>
+
+
+<form asp-action="Login" asp-Controller="Home" method="post">
+  <div class="row mb-3">
+    <label asp-for="LogEm" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input asp-for="LogEm"  type="email" class="form-control">
+      <span asp-validation-for="LogEm" class="text-danger"></span>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label asp-for="LogPass" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input asp-for="LogPass" type="password" class="form-control" id="inputPassword3">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+  <a><button>Register</button></a>

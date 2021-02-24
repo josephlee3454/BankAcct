@@ -1,0 +1,30 @@
+@model Account
+@* <h1>Welcome @ViewBag.theUser.first_name @ViewBag.thisUser.last_name</h1> *@
+@* <h3>Current balance: $@ViewBag.Total.ToString("0.00")</h3> *@
+
+
+
+<form asp-action="NewTransaction" asp-Controller="Home" method="post">
+  <div class="form-group">
+    <label asp-for="userTransaction.TotalAmt"></label>
+    <input asp-for="userTransaction.TotalAmt" class="form-control">
+    <span asp-validation-for="userTransaction.TotalAmt" class="text-danger"></span>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+    <table class="table table-striped">
+        <tr>
+            <th>Team Name</th>
+            <th>Team Location</th>
+        </tr>
+        @foreach(var item in Model.allTransaction)
+        {
+            <tr>
+                <td>@item.TotalAmt</td>
+                <td>@item.CreatedAt.ToString("yyyy,MMMM dd")</td>
+            </tr>
+        }
+    </table>
+
+<a asp-action="Logout" asp-controller="Home" class="btn btn-info">Logout</a>

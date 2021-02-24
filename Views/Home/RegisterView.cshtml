@@ -1,0 +1,44 @@
+@model UserRegistration
+<form asp-action="Register" asp-Controller="Home" method="post">
+    
+  <div class="col-md-6">
+    <label asp-for="first_name" class="form-label">First Name</label>
+    <input asp-for="first_name" type="text" class="form-control" id="inputEmail4">
+    <span asp-validation-for="first_name" class="text-danger"></span>
+  </div>
+  
+  <div class="col-md-6">
+    <label asp-for="last_name" class="form-label">Last Name</label>
+    <input asp-for="last_name" type="text" class="form-control" id="inputPassword4">
+    <span asp-validation-for="last_name" class="text-danger"></span>
+  </div>
+
+  <div class="col-12">
+    <label asp-for="Email" class="form-label">Email</label>
+    <input asp-for="Email" type="text" class="form-control" id="inputAddress" placeholder="email@email.com">
+    <span asp-validation-for="Email" class="text-danger"></span>
+  </div>
+
+    <div class="col-md-6">
+        <label asp-for="Password" class="form-label">Password</label>
+        <input asp-for="Password" class="form-control">
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+
+  
+    <div class="col-md-6">
+        <label asp-for="ConfirmPass" class="form-label">Confirm</label>
+        <input asp-for="ConfirmPass" >
+        <span asp-validation-for="ConfirmPass" class="text-danger"></span>
+    </div>
+
+
+
+    <div class="col-12">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+
+
+<a asp-action="Login" asp-controller="Home">Login</a>
